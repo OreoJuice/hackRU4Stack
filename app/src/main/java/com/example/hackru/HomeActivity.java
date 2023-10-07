@@ -28,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
 
         //Deserializes user info
         user = (User)extras.getSerializable(USER);
+        //Gets user location and spawns in a new weather object
 
     }
 }

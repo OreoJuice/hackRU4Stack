@@ -28,12 +28,16 @@ public class MainActivity extends AppCompatActivity {
         if(firstTime.equals("Yes")){
             Intent intent = new Intent(this, NewUserActivity.class);
             startActivity(intent);
-        } else{
+        }
+        else{
             Intent intent = new Intent(this, HomeActivity.class);
             User myUser = deserializeSessionFromJson();
             Bundle bundle = new Bundle();
             bundle.putSerializable(USER, myUser);
             startActivity(intent);
+
+
+
         }
 
 
