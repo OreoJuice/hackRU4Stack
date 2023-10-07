@@ -21,24 +21,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        SharedPreferences sp = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-        String firstTime = sp.getString("FirstTimeOpen", "");
-
-        if(firstTime.equals("Yes")){
-            Intent intent = new Intent(this, NewUserActivity.class);
-            startActivity(intent);
-        }
-        else{
-            Intent intent = new Intent(this, HomeActivity.class);
-            User myUser = deserializeSessionFromJson();
-            Bundle bundle = new Bundle();
-            bundle.putSerializable(USER, myUser);
-            startActivity(intent);
-
-
-
-        }
+        setContentView(R.layout.activity_settings);
+//        SharedPreferences sp = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+//        String firstTime = sp.getString("FirstTimeOpen", "");
+//
+//        if(firstTime.equals("Yes")){
+//            Intent intent = new Intent(this, NewUserActivity.class);
+//            startActivity(intent);
+//        }
+//        else{
+//            Intent intent = new Intent(this, HomeActivity.class);
+//            User myUser = deserializeSessionFromJson();
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable(USER, myUser);
+//            startActivity(intent);
+//
+//
+//
+//        }
 
 
     }
