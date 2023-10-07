@@ -12,12 +12,17 @@ public class NewUserActivity extends AppCompatActivity {
 
     public static final String USER = "album";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_user);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
+
+
+
+
     }
 
     public String serializeUser(User myUser){
