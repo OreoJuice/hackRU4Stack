@@ -11,11 +11,17 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
 
     private User user;
     public static final String USER = "user";
+    private ListView userView;
+    private TextView textView;
+    public ArrayAdapter<User> adapterUser;
+    public ArrayAdapter<Weather> adapterWeather;
+    public ArrayAdapter<Quote> adapterQuote;
 
 
     @Override
@@ -30,12 +36,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         else{
-            Intent intent = new Intent(this, HomeActivity.class);
-            User myUser = deserializeSessionFromJson();
-            Bundle bundle = new Bundle();
-            bundle.putSerializable(USER, myUser);
-            startActivity(intent);
-
+            user = deserializeSessionFromJson();
+            savedInstanceState.putSerializable(USER, user);
+            //Deserializes user info
+            //user = (User)extras.getSerializable(USER);
 
 
         }
