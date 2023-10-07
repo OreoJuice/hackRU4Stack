@@ -13,20 +13,34 @@ import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView userView;
-    private TextView textView;
-    public ArrayAdapter<User> adapterUser;
-    public ArrayAdapter<Weather> adapterWeather;
-    public ArrayAdapter<Quote> adapterQuote;
-    public static final String USER = "album";
-    public static final String INDEX = "index";
+
+    private User user;
+    public static final String USER = "user";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences sp = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        String firstTime = sp.getString("FirstTimeOpen", "");
 
-        User myUser = deserializeSessionFromJson();
+        if(firstTime.equals("Yes")){
+            Intent intent = new Intent(this, NewUserActivity.class);
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(this, HomeActivity.class);
+            User myUser = deserializeSessionFromJson();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(USER, myUser);
+            startActivity(intent);
+
+
+
+        }
+
+
     }
 
     public String serializeUser(User myUser){
@@ -43,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         SharedPreferences sp = getPreferences(MODE_PRIVATE);
         String jUser = sp.getString("MyUser", null);
-        User myClass = gson.fromJson(jUser, User.class);
-        return myClass;
+        return gson.fromJson(jUser, User.class);
     }
 }
