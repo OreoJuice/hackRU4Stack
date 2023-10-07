@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="MyTextStyle" parent="TextAppearance.AppCompat">
+    <style name="MyTextViewStyle" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">16sp</item>
-<!--        <item name="font"></item>-->
+        <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="MyAltTextStyle" parent="TextAppearance.AppCompat">
+    <style name="MyAltTextViewStyle" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/alt_text</item>
-        <item name="android:textSize">12sp</item>
-<!--        <item name="font"></item>-->
+        <item name="android:textSize">16sp</item>
     </style>
+
+    <style name="MyEditTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
 </resources>
