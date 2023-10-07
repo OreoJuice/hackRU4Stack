@@ -18,8 +18,6 @@ public class NewUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_user);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-
-
     }
 
     public String serializeUser(User myUser){
