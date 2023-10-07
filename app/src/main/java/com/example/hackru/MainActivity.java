@@ -11,38 +11,34 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
 
     private User user;
     public static final String USER = "user";
-    private ListView userView;
-    private TextView textView;
-    public ArrayAdapter<User> adapterUser;
-    public ArrayAdapter<Weather> adapterWeather;
-    public ArrayAdapter<Quote> adapterQuote;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        SharedPreferences sp = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-        String firstTime = sp.getString("FirstTimeOpen", "");
-
-        if(firstTime.equals("Yes")){
-            Intent intent = new Intent(this, NewUserActivity.class);
-            startActivity(intent);
-        }
-        else{
-            user = deserializeSessionFromJson();
-            savedInstanceState.putSerializable(USER, user);
-            //Deserializes user info
-            //user = (User)extras.getSerializable(USER);
-
-
-        }
+        setContentView(R.layout.activity_settings);
+//        SharedPreferences sp = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+//        String firstTime = sp.getString("FirstTimeOpen", "");
+//
+//        if(firstTime.equals("Yes")){
+//            Intent intent = new Intent(this, NewUserActivity.class);
+//            startActivity(intent);
+//        }
+//        else{
+//            Intent intent = new Intent(this, HomeActivity.class);
+//            User myUser = deserializeSessionFromJson();
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable(USER, myUser);
+//            startActivity(intent);
+//
+//
+//
+//        }
 
 
     }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+<!--        <item name="font"></item>-->
+    </style>
+
+    <style name="MyAltTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/alt_text</item>
+        <item name="android:textSize">12sp</item>
+<!--        <item name="font"></item>-->
+    </style>
+</resources>
