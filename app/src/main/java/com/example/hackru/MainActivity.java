@@ -1,10 +1,17 @@
 package com.example.hackru;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
+
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,29 +23,19 @@ public class MainActivity extends AppCompatActivity {
 
     private User user;
     public static final String USER = "user";
+    protected FrameLayout content;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-//        SharedPreferences sp = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-//        String firstTime = sp.getString("FirstTimeOpen", "");
-//
-//        if(firstTime.equals("Yes")){
-//            Intent intent = new Intent(this, NewUserActivity.class);
-//            startActivity(intent);
-//        }
-//        else{
-//            Intent intent = new Intent(this, HomeActivity.class);
-//            User myUser = deserializeSessionFromJson();
-//            Bundle bundle = new Bundle();
-//            bundle.putSerializable(USER, myUser);
-//            startActivity(intent);
-//
-//
-//
-//        }
+
+        LinearLayout layout = new LinearLayout(this);
+        layout.setId(R.id.linear_layout);
+        FragmentManager fragMan = getFragmentManager();
+        FragmentTransaction fragTransaction = fragMan.beginTransaction();
+
 
 
     }

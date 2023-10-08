@@ -60,6 +60,13 @@ public class QuotesFragment extends Fragment {
     }
 
 
+    private void changeQuoteOnClick(){
+        Quote newQuote = new Quote();
+        String chosenQuote = newQuote.getChosenQuote();
+        TextView textSpace = (TextView) getView().findViewById(R.id.quote);
+        textSpace.setText(chosenQuote);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,4 +108,9 @@ public class QuotesFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+    }
 }
