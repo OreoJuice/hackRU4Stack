@@ -76,7 +76,7 @@ public class QuotesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Quote newQuote = new Quote();
+        Quote newQuote = new Quote(getContext());
         String chosenQuote = newQuote.getChosenQuote();
         View view = inflater.inflate(R.layout.fragment_quotes, container, false);
         TextView quote = (TextView)view.findViewById(R.id.quote);
@@ -84,7 +84,6 @@ public class QuotesFragment extends Fragment {
         Button button = (Button) view.findViewById(R.id.buttonQuote);
         super.onViewCreated(view, savedInstanceState);
         button.setOnClickListener(v -> {
-            // do something
             quote.setText(chosenQuote);
         });
         return view;
@@ -96,10 +95,8 @@ public class QuotesFragment extends Fragment {
         View view = getView();
 
         if(view!=null){
-            Quote newQuote = new Quote();
-            String chosenQuote = "fuck";
             TextView quote = (TextView)view.findViewById(R.id.quote);
-            quote.setText(chosenQuote);
+            quote.setText(new Quote(getContext()).getChosenQuote());
         }
     }
 
