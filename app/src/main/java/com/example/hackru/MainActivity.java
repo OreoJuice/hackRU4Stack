@@ -1,13 +1,17 @@
 package com.example.hackru;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
 
-import android.content.Context;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,42 +20,43 @@ import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences sharedPref;
-    SharedPreferences.Editor sharedPrefEditor;
+
+    private User user;
+    public static final String USER = "user";
+    protected FrameLayout content;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_home);
 
-        //TODO move editor object into only the if statement (no editing done otherwise)
-        sharedPref = getApplicationContext().getSharedPreferences(getString(R.string.shared_prefs), Context.MODE_PRIVATE);
-        sharedPrefEditor = sharedPref.edit();
-
-        if (sharedPref.getString(getString(R.string.already_booted), "").isEmpty()) {
-            //First Time, set prefs, boot up settings w/ dialog
-            //TODO define default values for sharedpreferences
-            sharedPrefEditor.putString(getString(R.string.already_booted), "true");
-            sharedPrefEditor.putBoolean(getString(R.string.weather_widget_active), true);
-            sharedPrefEditor.putBoolean(getString(R.string.celsius), true);
-            sharedPrefEditor.putBoolean(getString(R.string.motivational_quote_widget_active), true);
-            //TODO fix default font
-            sharedPrefEditor.putString(getString(R.string.font_family), "kanit");
-            sharedPrefEditor.apply();
-
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
+        SharedPreferences pf = getPreferences(MODE_PRIVATE);
+        boolean weather = pf.getBoolean(getString(R.string.weather_widget_active),true);
+        boolean quotes = pf.getBoolean(getString(R.string.motivational_quote_widget_active), true);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.fragment_container_quotes, QuotesFragment.class, null)
+                    .add(R.id.fragment_container_weather, WeatherFragment.class, null)
+                    .commit();
         }
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
     }
 
-    public void deleteAllSharedPrefs() {
-        sharedPrefEditor.remove(getString(R.string.already_booted));
-        sharedPrefEditor.remove(getString(R.string.user_name));
-        sharedPrefEditor.remove(getString(R.string.weather_widget_active));
-        sharedPrefEditor.remove(getString(R.string.celsius));
-        sharedPrefEditor.remove(getString(R.string.motivational_quote_widget_active));
-        sharedPrefEditor.remove(getString(R.string.font_family));
+    public String serializeUser(User myUser){
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor pe = sp.edit();
+        Gson gson = new Gson();
+        String jUser = gson.toJson(myUser);
+        pe.putString("MyUser", jUser);
+        pe.apply();
+        return jUser;
+    }
+
+    public User deserializeSessionFromJson() {
+        Gson gson = new Gson();
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        String jUser = sp.getString("MyUser", null);
+        return gson.fromJson(jUser, User.class);
     }
 }

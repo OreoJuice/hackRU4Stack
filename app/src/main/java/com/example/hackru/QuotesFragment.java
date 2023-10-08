@@ -39,6 +39,8 @@ public class QuotesFragment extends Fragment {
 
     public QuotesFragment() {
         // Required empty public constructor
+        super(R.layout.fragment_quotes);
+
     }
 
     /**
@@ -101,4 +103,9 @@ public class QuotesFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+    }
 }
