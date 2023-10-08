@@ -39,21 +39,17 @@ public class WeatherFragment extends Fragment {
     String url;
     int temp;
     TextView textView;
-
     View view;
-
+    Context context;
 
 
     public WeatherFragment(){
         super(R.layout.fragment_weather);
-        if(isAdded()) {
-            Log.d("mine","shutyu bitchass up troy");
+
+
             FindUserWeather();
             textView = (TextView) view.findViewById(R.id.temperatureTest);
             textView.setText("" + temp);
-        }else{
-            Log.d("mine","shutyu bitchass up chiyo");
-        }
 
     }
 
@@ -62,9 +58,9 @@ public class WeatherFragment extends Fragment {
     }
 
     private void FindUserWeather() {
-        LocationManager lm = (LocationManager) getActivity().getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+        LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 
-        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             lon = location.getLongitude();
@@ -76,7 +72,7 @@ public class WeatherFragment extends Fragment {
     }
 
     private void getWeather(double lon, double lat) { //Gets weather from given lon and lat, stores in premade variables of fragment
-        RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+
         url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon="+ lon + "&appid=" + KEY
         + "&units=imperial";
 
@@ -135,5 +131,9 @@ public class WeatherFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_weather, container, false);
         return view;
+    }
+
+    public void onAttach (Context context){
+        this.context = context;
     }
 }
