@@ -10,11 +10,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    protected FrameLayout content;
+    private TextView helloTextView;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor sharedPreferencesEditor;
@@ -73,8 +74,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-
+        helloTextView = (TextView)findViewById(R.id.helloTextView);
+        helloTextView.setText("Welcome " + sharedPreferences.getString(getString(R.string.user_name),"") + "!");
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        helloTextView.setText("Welcome " + sharedPreferences.getString(getString(R.string.user_name),"") + "!");    }
 
     public void deleteAllSharedPrefs() {
         sharedPreferencesEditor.remove(getString(R.string.already_booted));
