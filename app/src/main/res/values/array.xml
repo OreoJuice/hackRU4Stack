@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="font_family_choices">
+        <item>Kanit</item>
+        <item>Impact</item>
+        <item>Josefin Sans</item>
+        <item>Oxygen</item>
+        <item>Times New Roman</item>
+        <item>Wingdings</item>
+    </string-array>
+</resources>
