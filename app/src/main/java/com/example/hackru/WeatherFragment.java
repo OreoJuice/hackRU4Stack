@@ -49,8 +49,8 @@ public class WeatherFragment extends Fragment {
         if(isAdded()) {
             Log.d("mine","shutyu bitchass up troy");
             FindUserWeather();
-            textView = (TextView) view.findViewById(R.id.temperatureTest);
-            textView.setText("" + temp);
+//            textView = (TextView) view.findViewById(R.id.temperatureTest);
+//            textView.setText("" + temp);
         }else{
             Log.d("mine","shutyu bitchass up chiyo");
         }

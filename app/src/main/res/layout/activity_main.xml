@@ -8,6 +8,13 @@
     android:orientation="vertical">
 
     <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/quotesFragmentContainerView"
+        android:name="com.example.hackru.QuotesFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".QuotesFragment"/>
+
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
         android:name="com.example.hackru.WeatherFragment"
         android:layout_width="match_parent"

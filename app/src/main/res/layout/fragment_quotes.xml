@@ -17,13 +17,12 @@
             android:id="@+id/quote"
             android:layout_width="match_parent"
             android:layout_height="95dp"
+            android:background="#B12424"
             android:fontFamily="cursive"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="#673AB7"
-            android:textSize="50sp"
-            android:text="Inspirational Quote"
-             />
+            android:textSize="50sp" />
 
         <ImageView
             android:id="@+id/imageView"

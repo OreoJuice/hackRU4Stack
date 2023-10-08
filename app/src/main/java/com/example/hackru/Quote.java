@@ -18,26 +18,32 @@ public class Quote {
     private String chosenQuote;
 
     public Quote(){
-        Random rand = new Random(1449);
+//        quotes = new ArrayList<>();
+//        try{
+//            JsonReader reader = new JsonReader(new FileReader("./app/res/raw/quotes.json"));
+//
+//            quotes = Arrays.asList(new Gson().fromJson(reader, String[].class));
+//            reader.close();
+//
+//        }catch (FileNotFoundException fnfe) {
+//            fnfe.printStackTrace();
+//        } catch (IOException ioe) {
+//            ioe.printStackTrace();
+//        }
+
         quotes = new ArrayList<>();
-        try{
-            JsonReader reader = new JsonReader(new FileReader("./app/res/raw/quotes.json"));
-
-            quotes = Arrays.asList(new Gson().fromJson(reader, String[].class));
-            reader.close();
-
-        }catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
-
-        int max = quotes.size()-1;
-        int randomNum = rand.nextInt((max - 1) + 1) + 1;
-        chosenQuote = quotes.get(randomNum).toString();
-
+        quotes.add("Hi ao0");
+        quotes.add("Hi Ba1");
+        quotes.add("H Bao2");
+        quotes.add("i Bao3");
+        generateQuote();
     }
 
+    public void generateQuote() {
+        Random rand = new Random();
+        int randomNum = rand.nextInt(quotes.size());
+        chosenQuote = quotes.get(randomNum).toString();
+    }
     public String getChosenQuote(){
         return chosenQuote;
     }

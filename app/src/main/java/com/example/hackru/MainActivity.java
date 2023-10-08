@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
                     .add(R.id.fragmentContainerView2, WeatherFragment.class, null)
+                    .add(R.id.quotesFragmentContainerView, QuotesFragment.class, null)
                     .commit();
         }
     }
