@@ -1,5 +1,7 @@
 package com.example.hackru;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class Weather {
@@ -35,4 +37,5 @@ public class Weather {
     public String getIconURL() {
         return iconURL;
     }
+    public double getTemperature() {return temperature; }
 }

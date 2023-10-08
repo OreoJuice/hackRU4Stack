@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,6 +48,12 @@ public class WeatherFragment extends Fragment {
     private Weather current;
 
     private ImageView iconImageView;
+    private TextView temperatureTextView;
+    private TextView locationTextView;
+    private TextView highTextView;
+    private TextView lowTextView;
+
+    private RequestQueue queue;
 
     public WeatherFragment(){
         super(R.layout.fragment_weather);
@@ -67,14 +74,14 @@ public class WeatherFragment extends Fragment {
     }
 
     private void getWeather(double lon, double lat) { //Gets weather from given lon and lat, stores in premade variables of fragment
-        RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon="+ lon + "&appid=" + KEY
         + "&units=imperial";
 //        Log.d("arst", "getWeather");
 //        Log.d("arst", url);
         //Make JSON GET request and call testJsonToVar to parse the data
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
-            Log.d("arst", response.toString());
+//            Log.d("arst", response.toString());
             testJsonToVar(response); //PARSING OF JSON FILE TO WEATHER
         }, error -> {});
         queue.add(jsonObjectRequest);
@@ -84,12 +91,11 @@ public class WeatherFragment extends Fragment {
 //        Log.d("arst", "testJsonToVar");
         try {
             //Get JSON properties
-            temp = input.getDouble("weather.id");
-            condition = input.getString("weather.main");
-            icon = input.getString("weather.icon");
+            temp = input.getJSONObject("main").getDouble("temp");
+            condition = ((JSONObject)input.getJSONArray("weather").get(0)).getString("main");
+            icon = ((JSONObject)input.getJSONArray("weather").get(0)).getString("icon");
             String iconURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
             current = new Weather(temp, condition, iconURL);
-
             //Convert from Object -> JSON and store in SharedPreferences
             SharedPreferences mPrefs = getActivity().getPreferences(MODE_PRIVATE);
             SharedPreferences.Editor prefsEditor = mPrefs.edit();
@@ -97,9 +103,15 @@ public class WeatherFragment extends Fragment {
             String json = gson.toJson(current);
             prefsEditor.putString("MyWeather", json);
             prefsEditor.commit();
-            return;
+            Log.d("arst", current.toString());
+            fillData(current);
         }catch(Exception e){
+            e.printStackTrace();
         }
+    }
+
+    private void fillData(Weather current) {
+        temperatureTextView.setText(String.valueOf(current.getTemperature()));
     }
 
     @Override
@@ -117,9 +129,13 @@ public class WeatherFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        try {
-            iconImageView = (ImageView)view.findViewById(R.id.iconImageView);
+        iconImageView = (ImageView)view.findViewById(R.id.iconImageView);
+        temperatureTextView = (TextView)view.findViewById(R.id.temperatureTextView);
+        locationTextView = (TextView)view.findViewById(R.id.locationTextView);
+        highTextView = (TextView)view.findViewById(R.id.highTextView);
+        lowTextView = (TextView)view.findViewById(R.id.lowTextView);
 
+        try {
             //Get Weather object from SharedPreferences
             SharedPreferences mPrefs = getActivity().getPreferences(MODE_PRIVATE);
             Gson gson = new Gson();
@@ -130,16 +146,14 @@ public class WeatherFragment extends Fragment {
                 Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(weatherIcon).getContent());
                 iconImageView.setImageBitmap(bitmap);
             }
-
-
-
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
         //Get User Location
         FindUserWeather();
+//        Log.d("arst", current.toString());
+        if (current == null) {
+            return;
+        }
     }
 }
