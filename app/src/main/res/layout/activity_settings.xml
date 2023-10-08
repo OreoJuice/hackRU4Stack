@@ -7,6 +7,15 @@
     android:background="?backgroundColor">
 
 
+    <Button
+        android:id="@+id/returnToMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_border_shape"
+        android:text="Return to menu"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="622dp" />
+
     <View
         android:id="@+id/dividerone"
         android:layout_width="0dp"
