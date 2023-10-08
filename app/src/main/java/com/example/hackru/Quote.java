@@ -1,5 +1,7 @@
 package com.example.hackru;
 
+import android.content.Context;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,24 +16,18 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
 public class Quote {
-    private List<String> quotes;
+    private String[] quotes;
     private String chosenQuote;
 
-    public Quote() {
+    private Context context;
 
-//        quotes = getResource;
-        quotes.add("Hi ao0");
-        quotes.add("Hi Ba1");
-        quotes.add("H Bao2");
-        quotes.add("i Bao3");
-        generateQuote();
-    }
-
-    public void generateQuote() {
+    public Quote(Context current) {
+        this.context = current;
+        quotes = current.getResources().getStringArray(R.array.quotes);
         Random rand = new Random();
-        int randomNum = rand.nextInt(quotes.size());
-        chosenQuote = quotes.get(randomNum).toString();
+        chosenQuote = quotes[(rand.nextInt(quotes.length))];
     }
+
     public String getChosenQuote(){
         return chosenQuote;
     }
