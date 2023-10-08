@@ -11,5 +11,4 @@
         android:layout_height="match_parent"
         android:text="Once I was seven years old."
         android:textSize="50dp"/>
-
 </FrameLayout>
