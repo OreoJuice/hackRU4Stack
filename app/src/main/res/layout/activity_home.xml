@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     tools:context=".HomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/button10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border_shape"
             android:text="Good Morning!" />
 
         <EditText
@@ -26,21 +29,22 @@
             android:inputType="date" />
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/forecast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forecast" />
+            android:text="Forecast fragment" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/quote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quote" />
+            android:text="Quote fragment" />
 
         <Button
             android:id="@+id/settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_border_shape"
             android:text="Settings" />
 
     </LinearLayout>
