@@ -37,15 +37,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        public void openSettings() {
-            Intent intentSettings = new Intent(this, settingsActivity.class);
-            startActivity(intentSettings);
-        }
-
 
         //Deserializes user info
         user = (User)extras.getSerializable(USER);
         //Gets user location and spawns in a new weather object
 
+    }
+
+    public void openSettings() {
+        Intent intentSettings = new Intent(this, settingsActivity.class);
+        startActivity(intentSettings);
     }
 }
