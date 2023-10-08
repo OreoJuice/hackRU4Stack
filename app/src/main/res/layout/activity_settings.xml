@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/divider">
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/celsiusSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="48dp"
@@ -40,14 +40,14 @@
             app:layout_constraintTop_toTopOf="@+id/textView7" />
 
         <Switch
-            android:id="@+id/switch2"
+            android:id="@+id/weatherWidgetSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView6"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toTopOf="@+id/textView6" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView132"
+            app:layout_constraintStart_toEndOf="@+id/textView132"
+            app:layout_constraintTop_toTopOf="@+id/textView132" />
 
         <TextView
             android:id="@+id/textView7"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:text="Fahrenheit"
             app:layout_constraintBottom_toBottomOf="@+id/textView7"
-            app:layout_constraintStart_toEndOf="@+id/switch1"
+            app:layout_constraintStart_toEndOf="@+id/celsiusSwitch"
             app:layout_constraintTop_toTopOf="@+id/textView7" />
 
         <TextView
@@ -77,15 +77,15 @@
             android:layout_marginTop="4dp"
             android:text="Lorum Ipsum"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/textView132" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textView132"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:text="Weather Widget"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,7 +115,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/nameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -143,7 +143,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2_2"
@@ -155,7 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/divider2">
 
         <Switch
-            android:id="@+id/switch2_2"
+            android:id="@+id/motivationalQuotesWidget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="48dp"
@@ -191,7 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="Motivational Quotes"
+            android:text="Motivational Quotes Widget"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -210,7 +210,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/fontFamilySpinner"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
