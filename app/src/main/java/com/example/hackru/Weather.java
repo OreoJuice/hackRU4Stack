@@ -45,5 +45,5 @@ public class Weather {
     public double getTemperature() {return temperature; }
     public double getMin() {return temp_min; }
     public double getMax() {return temp_max; }
-    public string getLocation(){return location};
+    public String getLocation(){return location; }
 }
