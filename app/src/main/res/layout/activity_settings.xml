@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="4dp"
-                    android:text="Lorum Ipsum"
+                    android:text="General info about the weather"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView132" />
 
@@ -160,7 +160,8 @@
                 android:paddingBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView3"
                 app:layout_constraintStart_toEndOf="@+id/textView3"
-                app:layout_constraintTop_toTopOf="@+id/textView3" />
+                app:layout_constraintTop_toTopOf="@+id/textView3"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <View
                 android:id="@+id/dividertwo"
@@ -215,7 +216,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="4dp"
-                    android:text="Lorum Ipsum"
+                    android:text="A motivational quote to kickstart your day"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView6_2" />
 
