@@ -39,6 +39,13 @@ public class SettingsActivity extends AppCompatActivity{
         sharedPref = getApplicationContext().getSharedPreferences(getString(R.string.shared_prefs), Context.MODE_PRIVATE);
         sharedPrefEditor = sharedPref.edit();
 
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.weatherFragmentContainerView, WeatherFragment.class, null)
+                    .commit();
+        }
+
         instantiateViewObjects();
 //        Log.d("123SettingsActivity", sharedPref.getString(getString(R.string.user_name),""));
 
