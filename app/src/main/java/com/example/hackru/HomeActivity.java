@@ -45,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openSettings() {
-        Intent intentSettings = new Intent(this, settingsActivity.class);
+        Intent intentSettings = new Intent(this, SettingsActivity.class);
         startActivity(intentSettings);
     }
 }

@@ -2,15 +2,14 @@ package com.example.hackru;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.util.Log;
 
-public class settingsActivity extends AppCompatActivity{
+import static com.google.android.material.internal.ContextUtils.getActivity;
+
+public class SettingsActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState){

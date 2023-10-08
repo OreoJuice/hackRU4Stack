@@ -26,4 +26,17 @@
         <item>One day you will have to answer for your actions.</item>
         <item>Ligma Balls</item>
     </string-array>
+
+    <string name="shared_prefs">com.example.hackru</string>
+    <string name="already_booted">already_booted</string>
+    <string name="user_name">user_name</string>
+
+    <!-- Weather Widget -->
+    <string name="weather_widget_active">weather_widget_active</string>
+    <string name="celsius">celsius</string>
+
+    <!-- Motivational Quote Widget -->
+    <string name="motivational_quote_widget_active">motivational_quote_widget_active</string>
+    <string name="font_family">font_family</string>
+
 </resources>
