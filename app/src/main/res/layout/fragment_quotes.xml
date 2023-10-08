@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".QuotesFragment">
 
 
@@ -17,13 +17,13 @@
             android:id="@+id/quote"
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:background="@drawable/ic_launcher_background"
+            android:background="@drawable/edit_text_border_shape"
             android:fontFamily="cursive"
             android:text="Inspirational Quote"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="#673AB7"
-            android:textSize="10sp" />
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -42,7 +42,6 @@
             android:text="Generate New Quote" />
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

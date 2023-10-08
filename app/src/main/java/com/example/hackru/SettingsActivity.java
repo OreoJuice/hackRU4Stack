@@ -13,6 +13,9 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Button;
+import android.view.View;
+import android.content.Intent;
 
 import static com.google.android.material.internal.ContextUtils.getActivity;
 
@@ -27,6 +30,8 @@ public class SettingsActivity extends AppCompatActivity{
     private SharedPreferences sharedPref;
     private SharedPreferences.Editor sharedPrefEditor;
 
+    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -36,6 +41,19 @@ public class SettingsActivity extends AppCompatActivity{
 
         instantiateViewObjects();
 //        Log.d("123SettingsActivity", sharedPref.getString(getString(R.string.user_name),""));
+
+        button = (Button) findViewById(R.id.returnToMenu);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openHome();
+            }
+        });
+    }
+
+    public void openHome(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 
     private void instantiateViewObjects() {

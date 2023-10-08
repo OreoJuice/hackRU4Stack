@@ -42,6 +42,8 @@ public class WeatherFragment extends Fragment {
     private double lat;
     private String url;
     private double temp;
+    private double temp_min;
+    private double temp_max;
     private String condition;
     private String icon;
 
@@ -92,10 +94,12 @@ public class WeatherFragment extends Fragment {
         try {
             //Get JSON properties
             temp = input.getJSONObject("main").getDouble("temp");
+            temp_min = input.getJSONObject("main").getDouble("temp_min");
+            temp_max = input.getJSONObject("main").getDouble("temp_max");
             condition = ((JSONObject)input.getJSONArray("weather").get(0)).getString("main");
             icon = ((JSONObject)input.getJSONArray("weather").get(0)).getString("icon");
             String iconURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
-            current = new Weather(temp, condition, iconURL);
+            current = new Weather(temp, condition, iconURL, temp_min, temp_max);
             //Convert from Object -> JSON and store in SharedPreferences
             SharedPreferences mPrefs = getActivity().getPreferences(MODE_PRIVATE);
             SharedPreferences.Editor prefsEditor = mPrefs.edit();
@@ -111,7 +115,9 @@ public class WeatherFragment extends Fragment {
     }
 
     private void fillData(Weather current) {
-        temperatureTextView.setText(String.valueOf(current.getTemperature()));
+        temperatureTextView.setText(String.valueOf(current.getTemperature()) + "°F");
+        highTextView.setText(String.valueOf(current.getMax() + "°F"));
+        lowTextView.setText(String.valueOf(current.getMin() + "°F"));
     }
 
     @Override
