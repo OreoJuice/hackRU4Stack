@@ -17,21 +17,9 @@ public class Quote {
     private List<String> quotes;
     private String chosenQuote;
 
-    public Quote(){
-//        quotes = new ArrayList<>();
-//        try{
-//            JsonReader reader = new JsonReader(new FileReader("./app/res/raw/quotes.json"));
-//
-//            quotes = Arrays.asList(new Gson().fromJson(reader, String[].class));
-//            reader.close();
-//
-//        }catch (FileNotFoundException fnfe) {
-//            fnfe.printStackTrace();
-//        } catch (IOException ioe) {
-//            ioe.printStackTrace();
-//        }
+    public Quote() {
 
-        quotes = new ArrayList<>();
+//        quotes = getResource;
         quotes.add("Hi ao0");
         quotes.add("Hi Ba1");
         quotes.add("H Bao2");

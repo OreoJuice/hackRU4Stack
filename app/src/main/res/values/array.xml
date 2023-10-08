@@ -8,4 +8,29 @@
         <item>Times New Roman</item>
         <item>Wingdings</item>
     </string-array>
+    <string-array name="quotes">
+        <item>It is not easy to find happiness in ourselves, and it is not possible to find it elsewhere. - "Agnes Repplier"</item>
+        <item>The only journey is the one within. - "Rainer Maria Rilke"</item>
+        <item>Follow your honest convictions, and stay strong. - "William Thackeray"</item>
+        <item>The happiness of your life depends upon the quality of your thoughts; therefore guard accordingly. "Marcut Aurelius</item>
+        <item>Action may not always bring happiness; but there is no happiness without action.</item>
+        <item>Happiness depends more on the inward disposition of mind than on outward circumstances.</item>
+        <item>There is no happiness except in the realization that we have accomplished something.</item>
+        <item>Happiness is not a goal, but a by-product.</item>
+        <item>Happiness is not a state to arrive at, but a manner of traveling.</item>
+        <item>Purpose is what gives life a meaning.</item>
+        <item>The significance of a man is not in what he attains but in what he longs to attain.</item>
+        <item>In all things that you do, consider the end.</item>
+        <item>Life can be pulled by goals just as surely as it can be pushed by drives.</item>
+        <item>The virtue lies in the struggle, not in the prize.</item>
+        <item>To reach a port, we must sail</item>
+        <item>Success is the child of audacity.</item>
+        <item>The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.</item>
+        <item>The secret of success is to know something nobody else knows.</item>
+        <item>The surest way not to fail is to determine to succeed.</item>
+        <item>I cannot give you the formula for success, but I can give you the formula for failure</item>
+        <item>Careful thinking and hard work will solve nearly all your problems. Try and see for yourself.</item>
+        <item>Years teach us more than books.</item>
+        <item>The only medicine for suffering, crime, and all the other woes of mankind, is wisdom.</item>
+    </string-array>
 </resources>
