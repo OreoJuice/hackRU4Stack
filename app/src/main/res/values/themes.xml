@@ -13,10 +13,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/medium_green</item>
         <!-- Misc -->
-        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
-        <item name="editTextStyle">@style/MyEditTextStyle</item>
+        <item name="android:textViewStyle">@style/MyTextStyle</item>
 
-        <item name="fontFamily">@font/kanit_font_family</item>
         <item name="backgroundColor">@color/bg_color</item>
         <item name="android:listDivider">?attr/colorPrimary</item>
     </style>
