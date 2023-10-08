@@ -2,6 +2,6 @@
 
 This is a healthy lifestyle app which enables people to better plan their day based on a weather api and xml data. Utilized persistant data and json serialization with help from the GSON library.
 
-![Screenshot_20231008_093513_hackRU](https://github.com/OreoJuice/hackRU4Stack/assets/114830718/5afe5dd2-2b91-4e38-a5aa-6290730f16be)
+![Screenshot_20231008_093513_hackRU](https://github.com/OreoJuice/hackRU4Stack/assets/114830718/d76e4da3-196d-4d79-8b06-b4b640c9efe8)
 
-![Screenshot_20231008_093551_hackRU](https://github.com/OreoJuice/hackRU4Stack/assets/114830718/a72ad2bf-1829-4077-a4f6-b1f0910ee9fa)
+![Screenshot_20231008_093551_hackRU](https://github.com/OreoJuice/hackRU4Stack/assets/114830718/d2fc96d4-27dd-40d1-9a96-c09ecec870ac)
