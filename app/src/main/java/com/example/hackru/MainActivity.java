@@ -29,21 +29,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        //setContentView(R.layout.activity_home);
 
-        LinearLayout layout = new LinearLayout(this);
-        layout.setId(R.id.linear_layout);
-        FragmentManager fragMan = getFragmentManager();
-        FragmentTransaction fragTransaction = fragMan.beginTransaction();
+        SharedPreferences pf = getPreferences(MODE_PRIVATE);
+        boolean weather = pf.getBoolean(getString(R.string.weather_widget_active),true);
+        boolean quotes = pf.getBoolean(getString(R.string.motivational_quote_widget_active), true);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_weather, WeatherFragment.newInstance("Weather1", "Weather2"))
-                    .replace(R.id.fragment_container_quotes, QuotesFragment.newInstance("Quote1", "Quote2"))
-                    .commitNow();
+                    .setReorderingAllowed(true)
+                    .add(R.id.fragment_container_quotes, QuotesFragment.class, null)
+                    .add(R.id.fragment_container_weather, WeatherFragment.class, null)
+                    .commit();
         }
-
-
-
     }
 
     public String serializeUser(User myUser){

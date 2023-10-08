@@ -26,6 +26,7 @@ public class WeatherFragment extends Fragment {
 
     public WeatherFragment() {
         // Required empty public constructor
+        super(R.layout.fragment_weather);
     }
 
     /**

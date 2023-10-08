@@ -39,6 +39,8 @@ public class QuotesFragment extends Fragment {
 
     public QuotesFragment() {
         // Required empty public constructor
+        super(R.layout.fragment_quotes);
+
     }
 
     /**
@@ -59,13 +61,6 @@ public class QuotesFragment extends Fragment {
         return fragment;
     }
 
-
-    private void changeQuoteOnClick(){
-        Quote newQuote = new Quote();
-        String chosenQuote = newQuote.getChosenQuote();
-        TextView textSpace = (TextView) getView().findViewById(R.id.quote);
-        textSpace.setText(chosenQuote);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
