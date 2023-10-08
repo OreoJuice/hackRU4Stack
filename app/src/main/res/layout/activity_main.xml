@@ -8,53 +8,17 @@
     android:orientation="vertical">
 
     <androidx.fragment.app.FragmentContainerView
-
-        android:id="@+id/fragment_container_weather"
+        android:id="@+id/quotesFragmentContainerView"
+        android:name="com.example.hackru.QuotesFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="wrap_content"
+        tools:context=".QuotesFragment"/>
+
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container_quotes"
+        android:id="@+id/weatherFragmentContainerView"
+        android:name="com.example.hackru.WeatherFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="462dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="413dp"
-        android:layout_height="417dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginBottom="498dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/oatmeal" />
+        tools:context=".WeatherFragment" />
 
 </LinearLayout>

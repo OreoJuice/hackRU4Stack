@@ -8,25 +8,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    <string-array name="quotes">
-        <item>text_string</item>
-        <item>Remember to drink water!</item>
-        <item>Always do your best!</item>
-        <item>It\'s not about how you start, It\'s about how you finish!</item>
-        <item>Even the smallest of improvement is still improvement!</item>
-        <item>Shred harder</item>
-        <item>Lock In.</item>
-        <item>She was never yours, just your turn.</item>
-        <item>Delusion is the solution.</item>
-        <item>I never learned how to read</item>
-        <item>A man who does not have the sauce is lost, but the same man can get lost in the sauce. - Gucci Mane</item>
-        <item>I can\'t believe Steve Jobs died of Ligma</item>
-        <item>Meow</item>
-        <item>Nyaaaa~~~</item>
-        <item>One day you will have to answer for your actions.</item>
-        <item>Ligma Balls</item>
-    </string-array>
-
     <string name="shared_prefs">com.example.hackru</string>
     <string name="already_booted">already_booted</string>
     <string name="user_name">user_name</string>

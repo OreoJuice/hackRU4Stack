@@ -26,12 +26,6 @@ import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link //WeatherFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class WeatherFragment extends Fragment {
     final String KEY = "08ab2361e03f6f8d20395208efe509d4";
     double lon;
@@ -46,14 +40,14 @@ public class WeatherFragment extends Fragment {
 
     public WeatherFragment(){
         super(R.layout.fragment_weather);
-        if(isAdded()) {
-            Log.d("mine","shutyu bitchass up troy");
-            FindUserWeather();
-            textView = (TextView) view.findViewById(R.id.temperatureTest);
-            textView.setText("" + temp);
-        }else{
-            Log.d("mine","shutyu bitchass up chiyo");
-        }
+//        if(isAdded()) {
+//            Log.d("mine","shutyu bitchass up troy");
+//            FindUserWeather();
+//            textView = (TextView) view.findViewById(R.id.temperatureTest);
+//            textView.setText("" + temp);
+//        }else{
+//            Log.d("mine","shutyu bitchass up chiyo");
+//        }
 
     }
 
@@ -123,10 +117,6 @@ public class WeatherFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
-
     }
 
     @Override
