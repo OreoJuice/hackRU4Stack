@@ -46,14 +46,9 @@ public class SettingsActivity extends AppCompatActivity{
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                openHome();
+                onBackPressed();
             }
         });
-    }
-
-    public void openHome(){
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
     }
 
     private void instantiateViewObjects() {

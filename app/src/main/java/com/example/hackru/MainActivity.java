@@ -83,5 +83,6 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferencesEditor.remove(getString(R.string.celsius));
         sharedPreferencesEditor.remove(getString(R.string.motivational_quote_widget_active));
         sharedPreferencesEditor.remove(getString(R.string.font_family));
+        sharedPreferencesEditor.apply();
     }
 }
