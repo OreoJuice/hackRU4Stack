@@ -5,8 +5,10 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,7 +30,7 @@ public class QuotesFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     ImageView imageView;
-    private static TextView quotes;
+    private TextView quotes;
     private ArrayList<String> inspirationalQuotes;
 
     // TODO: Rename and change types of parameters
@@ -57,6 +59,7 @@ public class QuotesFragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,11 +75,30 @@ public class QuotesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         Quote newQuote = new Quote();
-
+        String chosenQuote = newQuote.getChosenQuote();
         View view = inflater.inflate(R.layout.fragment_quotes, container, false);
-        quotes = (TextView)view.findViewById(R.id.textView);
+        TextView quote = (TextView)view.findViewById(R.id.quote);
+        quote.setText(chosenQuote);
+        Button button = (Button) view.findViewById(R.id.buttonQuote);
         super.onViewCreated(view, savedInstanceState);
-        quotes.setText(newQuote.getChosenQuote());
+        button.setOnClickListener(v -> {
+            // do something
+            quote.setText(chosenQuote);
+        });
         return view;
     }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        View view = getView();
+
+        if(view!=null){
+            Quote newQuote = new Quote();
+            String chosenQuote = "fuck";
+            TextView quote = (TextView)view.findViewById(R.id.quote);
+            quote.setText(chosenQuote);
+        }
+    }
+
 }
