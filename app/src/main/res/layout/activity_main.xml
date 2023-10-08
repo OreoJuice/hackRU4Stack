@@ -7,6 +7,15 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/helloTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_border_shape"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="46sp" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/quotesFragmentContainerView"
         android:name="com.example.hackru.QuotesFragment"

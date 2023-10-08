@@ -1,20 +1,25 @@
 package com.example.hackru;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class Weather {
 
     private double temperature;
+    private double temp_min;
+    private double temp_max;
     private String condition;
     private String iconURL;
-    private double windSpeed;
+    private String location;
     private ArrayList<String> recommendation;
 
-    public Weather(double temperature, String condition, String iconURL, double windSpeed){
+    public Weather(double temperature, String condition, String iconURL, double temp_min, double temp_max){
         this.temperature = temperature;
         this.condition = condition;
         this.iconURL = iconURL;
-        this.windSpeed = windSpeed;
+        this.temp_min = temp_min;
+        this.temp_max = temp_max;
         this.recommendation = recommendItems(temperature, condition);
     }
 
@@ -37,4 +42,8 @@ public class Weather {
     public String getIconURL() {
         return iconURL;
     }
+    public double getTemperature() {return temperature; }
+    public double getMin() {return temp_min; }
+    public double getMax() {return temp_max; }
+    public string getLocation(){return location};
 }
