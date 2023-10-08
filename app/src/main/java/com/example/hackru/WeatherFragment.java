@@ -157,7 +157,7 @@ public class WeatherFragment extends Fragment {
 
     public void updateIcon(View view){
         try {
-            ImageView i = (ImageView)view.findViewById(R.id.iconView);
+//            ImageView i = (ImageView)view.findViewById(R.id.iconView);
             SharedPreferences mPrefs = getActivity().getPreferences(MODE_PRIVATE);
             Gson gson = new Gson();
             String json = mPrefs.getString("MyWeather", "");
@@ -165,7 +165,7 @@ public class WeatherFragment extends Fragment {
             if(obj != null){
                 String weatherIcon = obj.getIconURL();
                 Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(weatherIcon).getContent());
-                i.setImageBitmap(bitmap);
+//                i.setImageBitmap(bitmap);
             }
 
         } catch (MalformedURLException e) {
@@ -182,7 +182,7 @@ public class WeatherFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_weather, container, false);
 
         try {
-            ImageView i = (ImageView)view.findViewById(R.id.iconView);
+//            ImageView i = (ImageView)view.findViewById(R.id.iconView);
             SharedPreferences mPrefs = getActivity().getPreferences(MODE_PRIVATE);
             Gson gson = new Gson();
             String json = mPrefs.getString("MyWeather", "");
@@ -190,7 +190,7 @@ public class WeatherFragment extends Fragment {
             if(obj != null){
                 String weatherIcon = obj.getIconURL();
                 Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(weatherIcon).getContent());
-                i.setImageBitmap(bitmap);
+//                i.setImageBitmap(bitmap);
             }
 
         } catch (MalformedURLException e) {
