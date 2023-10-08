@@ -5,7 +5,8 @@
     android:id="@+id/linear_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="2dp">
 
     <TextView
         android:id="@+id/helloTextView"
@@ -21,13 +22,23 @@
         android:name="com.example.hackru.QuotesFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".QuotesFragment"/>
+        android:background="#2196F3"
+        android:src="@drawable/frame_border"
+        android:clipToPadding="true"
+        android:padding="2dp"
+        android:visibility="visible"
+        tools:context=".QuotesFragment" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/weatherFragmentContainerView"
         android:name="com.example.hackru.WeatherFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:src="@drawable/frame_border"
+        android:clipToPadding="true"
+        android:padding="2dp"
+        android:visibility="visible"
         tools:context=".WeatherFragment" />
 
 </LinearLayout>
