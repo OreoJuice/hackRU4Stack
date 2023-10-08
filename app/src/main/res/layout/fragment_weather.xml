@@ -53,4 +53,14 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/highTextView"
         app:layout_constraintTop_toBottomOf="@+id/highTextView" />
+
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

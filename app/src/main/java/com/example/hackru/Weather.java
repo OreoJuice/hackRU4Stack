@@ -7,14 +7,12 @@ public class Weather {
     private double temperature;
     private String condition;
     private String iconURL;
-    private double windSpeed;
     private ArrayList<String> recommendation;
 
-    public Weather(double temperature, String condition, String iconURL, double windSpeed){
+    public Weather(double temperature, String condition, String iconURL){
         this.temperature = temperature;
         this.condition = condition;
         this.iconURL = iconURL;
-        this.windSpeed = windSpeed;
         this.recommendation = recommendItems(temperature, condition);
     }
 
