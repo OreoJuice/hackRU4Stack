@@ -54,7 +54,7 @@ public class WeatherFragment extends Fragment {
     private TextView locationTextView;
     private TextView highTextView;
     private TextView lowTextView;
-
+    private String location;
     private RequestQueue queue;
 
     public WeatherFragment(){
@@ -96,6 +96,7 @@ public class WeatherFragment extends Fragment {
             temp = input.getJSONObject("main").getDouble("temp");
             temp_min = input.getJSONObject("main").getDouble("temp_min");
             temp_max = input.getJSONObject("main").getDouble("temp_max");
+            location = input.getString("name");
             condition = ((JSONObject)input.getJSONArray("weather").get(0)).getString("main");
             icon = ((JSONObject)input.getJSONArray("weather").get(0)).getString("icon");
             String iconURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
@@ -118,6 +119,7 @@ public class WeatherFragment extends Fragment {
         temperatureTextView.setText(String.valueOf(current.getTemperature()) + "°F");
         highTextView.setText(String.valueOf(current.getMax() + "°F"));
         lowTextView.setText(String.valueOf(current.getMin() + "°F"));
+        locationTextView.setText(location);
     }
 
     @Override

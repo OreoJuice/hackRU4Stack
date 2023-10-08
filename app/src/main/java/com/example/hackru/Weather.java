@@ -11,6 +11,7 @@ public class Weather {
     private double temp_max;
     private String condition;
     private String iconURL;
+    private String location;
     private ArrayList<String> recommendation;
 
     public Weather(double temperature, String condition, String iconURL, double temp_min, double temp_max){
@@ -44,4 +45,5 @@ public class Weather {
     public double getTemperature() {return temperature; }
     public double getMin() {return temp_min; }
     public double getMax() {return temp_max; }
+    public string getLocation(){return location};
 }
